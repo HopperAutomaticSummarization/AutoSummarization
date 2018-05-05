@@ -12,9 +12,6 @@ import numpy as np
 import re
 from textProcessing import pad_sequences,tokenize,vectorize_stories,loadfile,chtokenize,loaddic,vectorize_x,jiebacut
 
-__author__ = 'Snake'
-
-
 def train():
     # input_text = ['1 2 3 4 5'
     #               , '6 7 8 9 10'
