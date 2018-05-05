@@ -1,7 +1,7 @@
 #coding:utf8
 import sys
-import importlib
-importlib.reload(sys)
+reload(sys)
+sys.setdefaultencoding('utf-8')
 from keras.models import Sequential
 from keras.layers.recurrent import LSTM
 from keras.layers.embeddings import Embedding
@@ -120,10 +120,11 @@ def train():
     # print ('Train Ended')
 
 # def predict(input_text):
-    from socket import socket, AF_INET, SOCK_STREAM
-
-    sock = socket(AF_INET, SOCK_STREAM)
-    sock.bind(('192.168.1.103',50008))
+    import socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    host = socket.gethostbyname(socket.gethostname())
+    port = 50008
+    sock.bind((host,port))
     sock.listen(5)
     while True:
         conn,addr = sock.accept()
@@ -152,7 +153,8 @@ def train():
                 predict_sequence.append(next_token)
             print (tempstr)
             result = tempstr
-            # print('Predict output:', predict_sequence)
+
+            print('Predict output:', predict_sequence)
         reply = result
         conn.send(reply.encode())
 

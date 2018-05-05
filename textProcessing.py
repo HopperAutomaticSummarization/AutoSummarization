@@ -207,13 +207,7 @@ def gettargetlen(input_textPath,tar_textPath):
 
 if __name__ == '__main__':
     pass
-    # dic = loaddic('./corpus/dic.txt')
-    # for word in dic:
-    #     print word
-
-
-    #
-    # gettargetlen('./corpus/content-12147.txt','./corpus/title-12147.txt')
-    # generateDic('./corpus/title-12147.txt','./corpus/content-12147.txt','./corpus/dic.txt')
+    gettargetlen('./corpus/content-12147.txt','./corpus/title-12147.txt')
+    generateDic('./corpus/title-12147.txt','./corpus/content-12147.txt','./corpus/dic.txt')
     # chtokenize(loadfile('./corpus/title1-500.txt')[0])
 

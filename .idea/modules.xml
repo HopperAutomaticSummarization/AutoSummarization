@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AutoSummarization.iml" filepath="$PROJECT_DIR$/.idea/AutoSummarization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AutomaticSummarization.iml" filepath="$PROJECT_DIR$/.idea/AutomaticSummarization.iml" />
     </modules>
   </component>
 </project>

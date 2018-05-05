@@ -1,14 +1,13 @@
 #coding:utf8
 
-from socket import socket, AF_INET, SOCK_STREAM
+import socket
 
 port = 50008
-host = 'localhost'
-
+host = socket.gethostbyname(socket.gethostname())
 
 def client(name):
-    sock = socket(AF_INET, SOCK_STREAM)
-    sock.connect(('192.168.1.103',port))
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((host,port))
     sock.send(name)
     reply = sock.recv(1024)
     sock.close()

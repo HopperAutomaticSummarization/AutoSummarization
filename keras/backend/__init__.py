@@ -14,6 +14,7 @@ if not os.path.exists(_keras_dir):
     os.makedirs(_keras_dir)
 
 _BACKEND = 'theano'
+
 _config_path = os.path.expanduser(os.path.join(_keras_dir, 'keras.json'))
 if os.path.exists(_config_path):
     _config = json.load(open(_config_path))
@@ -23,10 +24,11 @@ if os.path.exists(_config_path):
     assert type(_epsilon) == float
     _backend = _config.get('backend', _BACKEND)
     assert _backend in {'theano', 'tensorflow'}
-
     set_floatx(_floatx)
     set_epsilon(_epsilon)
+
     _BACKEND = _backend
+
 else:
     # save config file, for easy edition
     _config = {'floatx': floatx(),
